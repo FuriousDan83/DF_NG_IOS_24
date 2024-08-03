@@ -44,6 +44,7 @@
 		B548729A2C5EB106003D1DFB /* BookHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B548729E2C5EB106003D1DFB /* BookHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookHubUITests.swift; sourceTree = "<group>"; };
 		B54872A02C5EB106003D1DFB /* BookHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B54872AD2C5EB1EE003D1DFB /* AppStyle */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppStyle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		B54872772C5EB103003D1DFB = {
 			isa = PBXGroup;
 			children = (
+				B54872AD2C5EB1EE003D1DFB /* AppStyle */,
 				B54872822C5EB104003D1DFB /* BookHub */,
 				B54872932C5EB106003D1DFB /* BookHubTests */,
 				B548729D2C5EB106003D1DFB /* BookHubUITests */,
