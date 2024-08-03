@@ -27,12 +27,32 @@ let package = Package(
     dependencies: [
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Domain"),
+            name: "Entities",
+            dependencies: []
+        ),
+        .target(
+            name: "RepositoryProtocol",
+            dependencies: ["Entities"]
+        ),
+        .target(
+            name: "UseCaseProtocol",
+            dependencies: ["Entities"]
+        ),
+        .target(
+            name: "UseCases",
+            dependencies: [
+                "Entities",
+                "RepositoryProtocol",
+                "UseCaseProtocol"
+            ]
+        ),
         .testTarget(
             name: "DomainTests",
-            dependencies: ["Domain"]),
+            dependencies: [
+                "UseCases",
+                "RepositoryProtocol",
+            ]
+        ),
     ]
 )

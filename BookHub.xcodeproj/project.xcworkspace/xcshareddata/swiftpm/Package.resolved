@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "pilot",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Thieurom/Pilot",
+      "state" : {
+        "revision" : "d0c990223f3447fd912ae716d03676fd1db714af",
+        "version" : "0.5.1"
+      }
+    },
+    {
       "identity" : "swiftgenplugin",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SwiftGen/SwiftGenPlugin",
