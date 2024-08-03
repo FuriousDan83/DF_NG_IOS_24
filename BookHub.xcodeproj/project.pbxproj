@@ -45,6 +45,7 @@
 		B548729E2C5EB106003D1DFB /* BookHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookHubUITests.swift; sourceTree = "<group>"; };
 		B54872A02C5EB106003D1DFB /* BookHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B54872AD2C5EB1EE003D1DFB /* AppStyle */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppStyle; sourceTree = "<group>"; };
+		B54872AE2C5EE623003D1DFB /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		B54872772C5EB103003D1DFB = {
 			isa = PBXGroup;
 			children = (
+				B54872AE2C5EE623003D1DFB /* Domain */,
 				B54872AD2C5EB1EE003D1DFB /* AppStyle */,
 				B54872822C5EB104003D1DFB /* BookHub */,
 				B54872932C5EB106003D1DFB /* BookHubTests */,
