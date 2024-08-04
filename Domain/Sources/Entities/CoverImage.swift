@@ -5,4 +5,8 @@
 //  Created by Daniel Fourie on 03/08/2024.
 //
 
-import Foundation
+public protocol CoverImage {
+    
+    var imageURL: URL { get }
+    var image: Image { get }
+}
