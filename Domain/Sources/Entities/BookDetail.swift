@@ -21,7 +21,4 @@ public protocol BookDetail {
     var coverImage: CoverImage { get }
     var synopsis: String { get }
     var authors: [String] { get }
-    //var dimentions: BookDimention { get }
-    
-    var imageUrl: URL { get }
 }
