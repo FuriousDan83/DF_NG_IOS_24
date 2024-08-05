@@ -11,19 +11,19 @@ import NetworkCore
 import RepositoryProtocol
 
 public class BookRepository: BookRepositoryProtocol {
-    
+        
     private let bookAPI: BookAPIProtocol
     
     public init(bookAPI: BookAPIProtocol) {
         self.bookAPI = bookAPI
     }
     
-    public func getBooks() async throws -> [Book] {
-        return try await bookAPI.getBookList().map { $0 as Book }
+    public func getBooks(query: String) async throws -> [Book] {
+        return try await bookAPI.getBookList(query: query).map { $0 as! any Book }
     }
     
-    public func showBookDetail(isbn: String) async throws -> BookDetail {
-        let apiBookDetail = try await bookAPI.showBookDetail(isbn: isbn)
-        return apiBookDetail as BookDetail
+    public func getBookDetail(isbn13: String, isbn10: String) async throws -> BookDetail {
+        let apiBookDetail = try await bookAPI.showBookDetail(isbn: isbn13.isEmpty ? isbn10 : isbn13)
+        return apiBookDetail as! any BookDetail
     }
 }

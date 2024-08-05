@@ -18,7 +18,7 @@ public struct APIBookDetail: Decodable, Equatable {
     public let edition: String
     public let language: String
     public let pages: Int
-    public let apiCoverImage: APICoverImage
+    public let apiCoverImage: APIImage
     public let synopsis: String
     public let authors: [String]
 }
@@ -31,7 +31,7 @@ extension APIBookDetail {
         case isbn10 = "isbn"
         case isbn13, binding, publisher, language
         case published_date = "date_published"
-        case edition, pages, language, pages
+        case edition, pages
         case apiCoverImage = "image"
         case synopsis, authors
     }
