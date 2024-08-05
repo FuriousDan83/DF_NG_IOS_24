@@ -47,7 +47,7 @@ let package = Package(
             dependencies: [
                 "NetworkCore",
                 .product(name: "Entities", package: "Domain"),
-                .product(name: "RepositoryProtocol:", package: "Domain")
+                .product(name: "RepositoryProtocol", package: "Domain")
             ]
         ),
         .target(
