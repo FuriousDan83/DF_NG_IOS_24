@@ -7,7 +7,8 @@
 
 import Entities
 
+// sourcery: AutoMockable
 public protocol GetBookListUseCaseProtocol {
     
-    func execute() async throws -> [Book]
+    func execute(query: String) async throws -> [Book]
 }

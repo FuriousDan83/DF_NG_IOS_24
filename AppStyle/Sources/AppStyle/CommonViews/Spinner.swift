@@ -14,7 +14,7 @@ private struct Spinner: ViewModifier {
     private let progress = 0.7
     
     init(isPresented: Binding<Bool>) {
-        self.isPresented = isPresented
+        self._isPresented = isPresented
     }
     
     func body(content: Content) -> some View {
@@ -22,7 +22,7 @@ private struct Spinner: ViewModifier {
             content
             
             CircularProgressView(progress: progress)
-                .rotatingEffect(.degrees(rotatingDegrees))
+                .rotationEffect(.degrees(rotatingDegrees))
                 .renderIf(isPresented)
                 .onAppear {
                     withAnimation(

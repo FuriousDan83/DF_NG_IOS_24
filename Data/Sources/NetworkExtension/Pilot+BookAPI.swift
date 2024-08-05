@@ -8,11 +8,10 @@
 import NetworkCore
 import Pilot
 
-extension Pilot: BookAPIProtocol where R == BookRoute {
-    
-    public func getBooks() asyns throws -> [Books] {
+extension Pilot: BookAPIProtocol where R == BookRoute {    
+    public func getBookList(query: String) async throws -> [APIBook] {
         return try await request(
-            .getBooks(BookListParameters(perPage: 10, page: 1)),
+            .getBooks(BookListParameters(perPage: 10, page: 1, query: query)),
             target: [APIBook].self,
             decoder: .apiDecoder
         )
@@ -20,15 +19,10 @@ extension Pilot: BookAPIProtocol where R == BookRoute {
     
     public func showBookDetail(isbn: String) async throws -> APIBookDetail {
         return try await request(
-            .showBookDetail(BookDetailParameters(isbn: isbn)),
+            .showBookDetail(BookLDetailParameters(isbn: isbn)),
             target: APIBookDetail.self,
             decoder: .apiDecoder
         )
     }
 }
 
-extension APIBookDetail: BookDetail {
-    public var image: Image { coverImage }
-}
-
-extension CoverImage: Image {}

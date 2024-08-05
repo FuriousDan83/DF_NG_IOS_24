@@ -66,13 +66,16 @@ private extension BookListView {
 }
 
 #if DEBUG
-import DomainTestHelpers
+import DomainTestUtilities
 
-struct HomeView_Previews: PreviewProvider {
+struct BookListView_Previews: PreviewProvider {
     
     static var previews: some View {
         let bookListViewModel = BookListViewModel(getBookListUseCase: MockGetBookListUseCaseProtocol())
-        retrun Preview { BookListView(viewModel: bookListViewModel)}
+        
+        Group {
+            BookListView(viewModel: bookListViewModel)
+        }
     }
 }
 

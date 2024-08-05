@@ -17,7 +17,7 @@ public class GetBookListUseCase: GetBookListUseCaseProtocol {
         self.repository = repository
     }
     
-    public func execute() async throws -> [Book] {
-        return try await repository.getBooks()
+    public func execute(query: String) async throws -> [Book] {
+        return try await repository.getBooks(query: query)
     }
 }

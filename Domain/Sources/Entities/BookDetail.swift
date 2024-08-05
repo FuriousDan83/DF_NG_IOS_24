@@ -5,6 +5,8 @@
 //  Created by Daniel Fourie on 03/08/2024.
 //
 
+import Foundation
+
 public protocol BookDetail {
     
     var isbn10: String { get }
@@ -14,7 +16,7 @@ public protocol BookDetail {
     var title_long: String { get }
     var binding: String { get }
     var publisher: String { get }
-    var published_date: Date { get }
+    var published_date: String { get }
     var edition: String { get }
     var language: String { get }
     var pages: Int { get }
