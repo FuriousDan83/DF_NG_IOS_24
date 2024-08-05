@@ -11,19 +11,19 @@ import PilotType
 public enum BookRoute {
     
     case getBooks(BookListParameters)
-    case showBookDetail(BookDetailParameters)
+    case showBookDetail(BookLDetailParameters)
 }
 
 extension BookRoute: Route {
-    
-    public var baseUrl: URL {
+    public var baseURL: URL {
         .init(string: "https://api2.isbndb.com")!
     }
     
+    
     public var path: String {
         switch self {
-        case .getBooks(parameters): return "/books/\(parameters.query)"
-        case .showBookDetail(parameters): return "/book/\(parameters.isbn)"
+        case let .getBooks(parameters): return "/books/\(parameters.query)"
+        case let .showBookDetail(parameters): return "/book/\(parameters.isbn)"
         }
     }
     
@@ -31,8 +31,8 @@ extension BookRoute: Route {
     
     public var httpHeaders: HttpHeaders {
         [
-            ("Content-Type": "application/json"),
-            ("Authorization":"${ISBNDB_KEY")
+            "Content-Type": "application/json",
+            "Authorization":"${ISBNDB_KEY"
         ]
     }
     
@@ -41,14 +41,12 @@ extension BookRoute: Route {
         switch self {
         case let .getBooks(parameters): return parameters.encoded()
         case let .showBookDetail(parameters): return parameters.encoded()
-        default: nil
         }
     }
     
     public var parameterEncoding: ParameterEncoding? {
         switch self {
         case .getBooks, .showBookDetail: return .url
-        default: return nil
         }
     }
 }

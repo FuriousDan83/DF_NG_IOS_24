@@ -9,4 +9,5 @@ public struct BookListParameters: Parameterable {
     
     public let perPage: Int
     public let page: Int
+    public let query: String
 }

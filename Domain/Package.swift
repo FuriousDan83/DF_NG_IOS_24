@@ -22,6 +22,10 @@ let package = Package(
         .library(
             name: "UseCases",
             targets: ["UseCases"]
+        ),
+        .library(
+            name: "DomainTestUtilities",
+            targets: ["DomainTestUtilities"]
         )
     ],
     dependencies: [
@@ -47,11 +51,20 @@ let package = Package(
                 "UseCaseProtocol"
             ]
         ),
+        .target(
+            name: "DomainTestUtilities",
+            dependencies: [
+                "Entities",
+                "RepositoryProtocol",
+                "UseCaseProtocol"
+            ]
+        ),
         .testTarget(
             name: "DomainTests",
             dependencies: [
                 "UseCases",
                 "RepositoryProtocol",
+                "DomainTestUtilities"
             ]
         ),
     ]

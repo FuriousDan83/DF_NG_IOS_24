@@ -6,7 +6,5 @@
 //
 
 public protocol CoverImage {
-    
-    var imageURL: URL { get }
-    var image: Image { get }
+    var image: String { get }
 }

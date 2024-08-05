@@ -1,7 +1,15 @@
 {
   "sourceLanguage" : "en",
-  "strings" : {},
+  "strings" : {
+    "Book section thing" : {
+
+    },
+    "Header text" : {
+
+    },
+    "Home" : {
+
+    }
+  },
   "version" : "1.0"
 }
-
-"list.title.text" = "BookHUB";

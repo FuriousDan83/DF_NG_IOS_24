@@ -11,7 +11,6 @@ import UseCaseProtocol
 @MainActor public final class BookListViewModel: ObservableObject {
     
     private let getBookListUseCase: GetBookListUseCaseProtocol
-    private let showBookDetailUseCase: ShowBookDetailUseCaseProtocol
     
     @Published public private(set) var bookList: [BookItem] = []
     @Published public private(set) var isFetchingData = false
@@ -22,7 +21,7 @@ import UseCaseProtocol
     
     public func fetchBookList() async {
         do {
-            bookList = try await getBookListUseCase.execute()
+            bookList = try await getBookListUseCase.execute(query: "Animal Farm")
                 .map(BookItem.init)
         } catch {
             //TODO Error handling

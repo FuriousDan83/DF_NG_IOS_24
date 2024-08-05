@@ -30,6 +30,7 @@ let package = Package(
             dependencies: [
                 .product(name: "AppStyle", package: "AppStyle"),
                 .product(name: "UseCaseProtocol", package: "Domain"),
+                .product(name: "DomainTestUtilities", package: "Domain")
             ],
             plugins: [
                 .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
@@ -39,7 +40,8 @@ let package = Package(
             name: "BookDetail",
             dependencies: [
                 .product(name: "AppStyle", package: "AppStyle"),
-                .product(name: "UseCaseProtocol", package: "Domain")
+                .product(name: "UseCaseProtocol", package: "Domain"),
+                .product(name: "DomainTestUtilities", package: "Domain")
             ],
             plugins: [
                 .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
