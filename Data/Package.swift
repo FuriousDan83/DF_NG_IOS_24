@@ -18,6 +18,10 @@ let package = Package(
         .library(
             name: "Repositories",
             targets: ["Repositories"]
+        ),
+        .library(
+            name: "TestUtilities",
+            targets: ["TestUtilities"]
         )
     ],
     dependencies: [
@@ -46,11 +50,20 @@ let package = Package(
                 .product(name: "RepositoryProtocol:", package: "Domain")
             ]
         ),
+        .target(
+            name: "TestUtilities",
+            dependencies: [
+                "NetworkCore",
+                "NetworkExtension",
+                .product(name: "Entities", package: "Domain")
+            ]
+        ),
         .testTarget(
             name: "DataTests",
             dependencies: [
                 "NetworkCore",
-                "Repositories"
+                "Repositories",
+                "TestUtilities"
             ]
         ),
     ]

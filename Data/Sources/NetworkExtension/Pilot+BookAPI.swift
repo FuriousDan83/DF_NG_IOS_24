@@ -26,3 +26,9 @@ extension Pilot: BookAPIProtocol where R == BookRoute {
         )
     }
 }
+
+extension APIBookDetail: BookDetail {
+    public var image: Image { coverImage }
+}
+
+extension CoverImage: Image {}
