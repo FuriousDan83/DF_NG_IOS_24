@@ -8,4 +8,4 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-ISBNDB_KEY = "54710_659903f5c98c6b3a0b59864920278ca5"
+ISBNDB_KEY = 54710_659903f5c98c6b3a0b59864920278ca5

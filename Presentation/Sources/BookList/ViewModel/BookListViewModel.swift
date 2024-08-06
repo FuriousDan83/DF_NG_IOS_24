@@ -19,23 +19,28 @@ import UseCaseProtocol
         self.getBookListUseCase = getBookListUseCase
     }
     
-    public func fetchBookList() async {
+    public func fetchBookList(query: String) async {
         do {
-            bookList = try await getBookListUseCase.execute(query: "Animal Farm")
+            bookList = try await getBookListUseCase.execute(query: query)
                 .map(BookItem.init)
+            
+            for book in bookList {
+                print("Book found -> \(book.title_short)")
+            }
         } catch {
             //TODO Error handling
+            print("ERROR --- \(error)")
         }
     }
     
-    public func fetchData(isRefreshing: Bool = false) async {
+    public func fetchData(query: String, isRefreshing: Bool = false) async {
         if(!isRefreshing) {
             isFetchingData = true
         }
         
         await withTaskGroup(of: Void.self) { taskGroup in
             taskGroup.addTask {
-                await self.fetchBookList()
+                await self.fetchBookList(query: query)
             }
         }
         

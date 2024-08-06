@@ -20,7 +20,7 @@ public struct BookDetailView: View {
     
     public var body: some View {
         List {
-            
+            Text("This is the Detail view")
         }
         .listStyle(.plain)
         .navigationBarBackButtonHidden()

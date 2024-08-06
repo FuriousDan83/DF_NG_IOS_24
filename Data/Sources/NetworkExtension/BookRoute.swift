@@ -30,10 +30,14 @@ extension BookRoute: Route {
     public var httpMethod: HttpMethod { .get }
     
     public var httpHeaders: HttpHeaders {
-        [
-            "Content-Type": "application/json",
-            "Authorization":"${ISBNDB_KEY"
-        ]
+        guard let apiKey: String = Bundle.main.object(forInfoDictionaryKey: "ISBNDB_KEY") as? String else {
+            print("String not found")
+            return [:]
+        }
+        return [
+                "Content-Type": "application/json",
+                "Authorization": apiKey
+            ]
     }
     
     public var parameters: Parameters? {

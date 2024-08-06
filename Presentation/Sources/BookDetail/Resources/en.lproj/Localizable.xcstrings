@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
-  "strings" : {},
+  "strings" : {
+    "This is the Detail view" : {
+
+    }
+  },
   "version" : "1.0"
 }
-

@@ -11,6 +11,7 @@ public struct BookListView: View {
     
     @ObservedObject private var viewModel: BookListViewModel
     @State private var showingSpinner = false
+    @State private var searchText = ""
     
     public var body: some View {
         List {
@@ -19,19 +20,12 @@ public struct BookListView: View {
             bookCarouselSection
                 .renderIf(!viewModel.bookList.isEmpty)
         }
-        .listStyle(.plain)
-        .background(Color.gray)
-        .safeAreaInset(edge: .top, spacing: 0.0, content: {
-                EmptyView()
-                .frame(height: 1.0)
-                .background(Color.green)
-        })
         .spinner(isPresented: $showingSpinner)
         .task {
-            await viewModel.fetchData()
+            await viewModel.fetchData(query: searchText)
         }
         .refreshable {
-            await viewModel.fetchData(isRefreshing: true)
+            await viewModel.fetchData(query: searchText, isRefreshing: true)
         }
         .onReceive(viewModel.$isFetchingData) {
             showingSpinner = $0
@@ -47,7 +41,8 @@ private extension BookListView {
     
     var searchSection: some View {
         Section {
-            Text("Home")
+            Text("Searching for \(searchText)")
+                .searchable(text: $searchText, prompt: "Search for books...")
                 .multilineTextAlignment(.center)
                 .padding(.top, 24.0)
                 .padding(.bottom, 40.0)

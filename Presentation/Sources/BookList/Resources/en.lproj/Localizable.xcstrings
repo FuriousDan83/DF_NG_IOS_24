@@ -7,7 +7,10 @@
     "Header text" : {
 
     },
-    "Home" : {
+    "Search for books..." : {
+
+    },
+    "Searching for %@" : {
 
     }
   },

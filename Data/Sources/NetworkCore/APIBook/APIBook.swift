@@ -15,4 +15,10 @@ public struct APIBook: Decodable, Equatable {
     public let title_short: String
     
     public let coverImageURL: URL
+    
+    enum APIBookCodingKeys: String, CodingKey {
+        case isbn10, isbn13
+        case title_short
+        case coverImageURL
+    }
 }
