@@ -8,15 +8,14 @@
 import NetworkCore
 import Pilot
 
-extension Pilot: BookAPIProtocol where R == BookRoute {    
-    public func getBookList(query: String) async throws -> [APIBook] {
-        let bookData =  try await request(
+extension Pilot: BookAPIProtocol where R == BookRoute {
+    public func getBookList(query: String) async throws -> APIBookResponse
+    {
+        return try await request(
             .getBooks(BookListParameters(perPage: 10, page: 1, query: query)),
             target: APIBookResponse.self,
             decoder: .apiDecoder
         )
-        let bookList = bookData.books
-        return bookList
     }
     
     public func showBookDetail(isbn: String) async throws -> APIBookDetail {

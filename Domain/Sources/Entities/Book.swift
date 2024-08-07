@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol Book {
+public protocol Book: Codable {
     
     //Note: Books published prior to 1 January 2007 have a 10 digit ISBN. Newer books have a 13 digit ISBN.
     var isbn10: String { get }
@@ -8,5 +8,5 @@ public protocol Book {
     
     var title_short: String { get }
     
-    var coverImage: CoverImage { get }
+    var coverImageURL: URL { get }
 }

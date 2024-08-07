@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct APIBook: Decodable, Equatable {
+public struct APIBook2: Decodable, Equatable {
     
     public let isbn10: String
     public let isbn13: String
@@ -16,9 +16,4 @@ public struct APIBook: Decodable, Equatable {
     
     public let coverImageURL: URL
     
-    enum APIBookCodingKeys: String, CodingKey {
-        case isbn10, isbn13
-        case title_short
-        case coverImageURL
-    }
 }

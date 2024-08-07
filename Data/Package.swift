@@ -31,7 +31,9 @@ let package = Package(
     targets: [
         .target(
             name: "NetworkCore",
-            dependencies: [],
+            dependencies: [
+                .product(name: "Entities", package: "Domain")
+            ],
             plugins: []
         ),
         .target(

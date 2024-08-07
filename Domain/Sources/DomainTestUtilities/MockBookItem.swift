@@ -19,7 +19,7 @@ public struct MockBookItem: Book, Equatable {
     
     public var title_short: String
     
-    public var coverImage: CoverImage
+    public var coverImageURL: URL
 }
 
 public extension MockBookItem {
@@ -28,6 +28,6 @@ public extension MockBookItem {
         isbn10: "0575097361",
         isbn13: "0575097361",
         title_short: "The Way of Kings, Part One (Stormlight Archive)",
-        coverImage: MockImage(image: "https://images.isbndb.com/covers/73/60/9780575097360.jpg")
+        coverImageURL: URL(string: "https://images.isbndb.com/covers/73/60/9780575097360.jpg") ?? URL(string:"")!
     )
 }

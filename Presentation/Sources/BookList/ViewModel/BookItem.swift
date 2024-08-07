@@ -23,14 +23,14 @@ public struct BookItem: Identifiable, Equatable {
     
     public let title_short: String
     
-    public var coverImage: CoverImage
+    public var coverImageURL: URL
     
     public init(book: Book) {
         self.id = book.isbn13.isEmpty ? book.isbn10 : book.isbn13
         self.isbn10 = book.isbn10
         self.isbn13 = book.isbn13
         self.title_short = book.title_short
-        self.coverImage = book.coverImage
+        self.coverImageURL = book.coverImageURL
     }
 }
 

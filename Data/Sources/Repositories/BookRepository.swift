@@ -19,7 +19,7 @@ public class BookRepository: BookRepositoryProtocol {
     }
     
     public func getBooks(query: String) async throws -> [Book] {
-        return try await bookAPI.getBookList(query: query).map { $0 as! any Book }
+        return try await bookAPI.getBookList(query: query).books
     }
     
     public func getBookDetail(isbn13: String, isbn10: String) async throws -> BookDetail {
