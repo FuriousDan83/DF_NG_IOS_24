@@ -3,7 +3,7 @@
 import UseCaseProtocol
 import AppStyle
 import SwiftUI
-
+import Lottie
 
 private typealias Section = AppStyle.Section
 
@@ -14,11 +14,10 @@ public struct BookListView: View {
     @State private var searchText = ""
     
     public var body: some View {
-        List {
+        ZStack {
             searchSection
             
-            bookCarouselSection
-                .renderIf(!viewModel.bookList.isEmpty)
+            
         }
         .spinner(isPresented: $showingSpinner)
         .task {
@@ -58,7 +57,14 @@ private extension BookListView {
             }
         }
     }
+    
+    var lottieView: some View {
+        Section {
+            LottieView(animation: .named(AppStyle.Lottie.bookLottie))
+        }
+    }
 }
+
 
 #if DEBUG
 import DomainTestUtilities

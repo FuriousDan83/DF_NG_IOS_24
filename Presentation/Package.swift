@@ -20,7 +20,8 @@ let package = Package(
     dependencies: [
         .package(name: "AppStyle", path: "../AppStyle"),
         .package(name: "Domain", path: "../Domain"),
-        .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.2")
+        .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.2"),
+        .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.5.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -30,7 +31,7 @@ let package = Package(
             dependencies: [
                 .product(name: "AppStyle", package: "AppStyle"),
                 .product(name: "UseCaseProtocol", package: "Domain"),
-                .product(name: "DomainTestUtilities", package: "Domain")
+                .product(name: "DomainTestUtilities", package: "Domain"),
             ],
             plugins: [
                 .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")

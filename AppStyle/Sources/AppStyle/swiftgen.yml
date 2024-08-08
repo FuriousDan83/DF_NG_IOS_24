@@ -12,3 +12,9 @@ xcassets:
             publicAccess: true
         output: Colours.swift
     
+json:
+    inputs:
+        LottieAnimations
+    outputs:
+        templatePath: Resources/SwiftGenTemplates/Lottie.stencil
+        output: LottieGen.swift

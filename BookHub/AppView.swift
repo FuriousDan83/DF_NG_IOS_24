@@ -10,7 +10,7 @@ import BookList
 import BookDetail
 import Factory
 
-struct ContentView: View {
+struct AppView: View {
     
     @StateObject private var appCoordinator: AppCoordinator = .init()
     @State private var showingBookDetail = false
@@ -39,5 +39,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    AppView()
 }

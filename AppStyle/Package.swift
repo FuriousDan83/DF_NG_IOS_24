@@ -12,14 +12,18 @@ let package = Package(
             targets: ["AppStyle"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.2")
+        .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.2"),
+        .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.5.0")
     ],
     targets: [
         .target(
             name: "AppStyle",
-            dependencies: [],
+            dependencies: [
+                .product(name: "Lottie", package: "lottie-spm")
+            ],
             resources: [
-                .process("Resources")
+                .process("LottieAnimations/BookLottie.json"),
+                .process("Assets")
             ],
             plugins: [
                 .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
