@@ -28,15 +28,13 @@ public struct CustomLottieAnimationView: UIViewRepresentable {
         
         animationView.translatesAutoresizingMaskIntoConstraints = false
         
-        view.backgroundColor = UIColor.blue
+        view.backgroundColor = UIColor.clear
         view.addSubview(animationView)
         view.bringSubviewToFront(animationView)
         
         NSLayoutConstraint.activate([
             animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
             animationView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
         return view

@@ -31,6 +31,8 @@
 		B5C169E02C6181CD0012FEFF /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = B5C169DF2C6181CD0012FEFF /* Factory */; };
 		B5C169E32C6181F40012FEFF /* Container+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C169E22C6181F40012FEFF /* Container+Injection.swift */; };
 		B5C959172C63BB790076A203 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C959162C63BB790076A203 /* SplashScreenView.swift */; };
+		B5CBE9792C663A7000B6095F /* SplashBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBE9782C663A7000B6095F /* SplashBackground.swift */; };
+		B5CBE97B2C66483500B6095F /* SplashTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBE97A2C66483500B6095F /* SplashTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		B5C169DC2C615D130012FEFF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B5C169E22C6181F40012FEFF /* Container+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Injection.swift"; sourceTree = "<group>"; };
 		B5C959162C63BB790076A203 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		B5CBE9782C663A7000B6095F /* SplashBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBackground.swift; sourceTree = "<group>"; };
+		B5CBE97A2C66483500B6095F /* SplashTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				B5C959162C63BB790076A203 /* SplashScreenView.swift */,
+				B5CBE9782C663A7000B6095F /* SplashBackground.swift */,
+				B5CBE97A2C66483500B6095F /* SplashTextView.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -350,9 +356,11 @@
 			files = (
 				B5C169DD2C615D130012FEFF /* AppCoordinator.swift in Sources */,
 				B5C169E32C6181F40012FEFF /* Container+Injection.swift in Sources */,
+				B5CBE97B2C66483500B6095F /* SplashTextView.swift in Sources */,
 				B5C959172C63BB790076A203 /* SplashScreenView.swift in Sources */,
 				B54872862C5EB104003D1DFB /* AppView.swift in Sources */,
 				B54872842C5EB104003D1DFB /* BookHubApp.swift in Sources */,
+				B5CBE9792C663A7000B6095F /* SplashBackground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
