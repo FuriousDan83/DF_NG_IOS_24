@@ -3,7 +3,7 @@ output_dir: ${DERIVED_SOURCES_DIR}
 
 xcassets:
     inputs:
-        Assets/Colours.xcassets
+        - Assets/Colours.xcassets
     outputs:
         templateName: Swift5
         params:
@@ -14,7 +14,7 @@ xcassets:
     
 json:
     inputs:
-        LottieAnimations
+        - LottieAnimations
     outputs:
         templatePath: Resources/SwiftGenTemplates/Lottie.stencil
         output: LottieGen.swift

@@ -18,20 +18,24 @@ struct SplashScreenView: View {
         self.animationFileName = AppStyle.Lottie.bookLottie
     }
     var body: some View {
-        ZStack {
+        VStack {
             if self.isActive {
                 AppView()
             } else {
                 CustomLottieAnimationView(fileName: AppStyle.Lottie.bookLottie, loopMode: .loop)
                     .frame(width: 300, height: 300)
-                CircularProgressView(progress: 30)
+                    
+
+                
+                Text("Welcome to BookHub")
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                self.isActive = true
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+//                self.isActive = true
+//            }
         }
+
     }
 }
 

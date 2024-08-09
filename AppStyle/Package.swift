@@ -22,8 +22,8 @@ let package = Package(
                 .product(name: "Lottie", package: "lottie-spm")
             ],
             resources: [
-                .process("LottieAnimations/BookLottie.json"),
-                .process("Assets")
+                .process("Resources/LottieAnimations/BookLottie.json"),
+                .process("Resources/Assets")
             ],
             plugins: [
                 .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")

@@ -13,16 +13,24 @@ public struct CustomLottieAnimationView: UIViewRepresentable {
     var fileName: String
     var loopMode: LottieLoopMode = .loop
     
-    public func makeUIView(context: Context) -> some UIView {
+    public func makeUIView(context: UIViewRepresentableContext<CustomLottieAnimationView>) -> some UIView {
         let view  = UIView()
+        
         let animationView = LottieAnimationView()
-        animationView.animation = LottieAnimation.named(AppStyle.Lottie.bookLottie)
+        let animation = LottieAnimation.named("BookLottie", bundle: Bundle.module)
+        
+        animationView.animation = animation
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = loopMode
+        animationView.frame = view.frame
+        animationView.backgroundBehavior = .pauseAndRestore
         animationView.play()
         
         animationView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.backgroundColor = UIColor.blue
         view.addSubview(animationView)
+        view.bringSubviewToFront(animationView)
         
         NSLayoutConstraint.activate([
             animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
